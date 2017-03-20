@@ -43,11 +43,10 @@ class CheckNoAddress extends Command
         $headers = ['Name', 'Email', 'Created'];
 
         if ($users) {
-            $this->info('There are ' . $users_count . ' users without an address.');
+            $this->info('There are '.$users_count.' users without an address.');
             $this->table($headers, $users);
         } else {
             $this->info('Seems that all users have a valid address in their records.');
         }
-
     }
 }

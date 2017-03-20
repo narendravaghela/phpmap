@@ -2,8 +2,6 @@
 
 namespace App\Contracts;
 
-use Illuminate\Database\Eloquent\Model;
-
 interface Pointable
 {
     /**
@@ -37,7 +35,6 @@ interface Pointable
     // public function pointPercent($max = 5);
 
     /**
-     *
      * @return mix
      */
     public function countTransactions();

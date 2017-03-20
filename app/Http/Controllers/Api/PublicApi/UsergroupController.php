@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Api\PublicApi;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
 
 class UsergroupController extends Controller
@@ -28,7 +27,7 @@ class UsergroupController extends Controller
      */
     public function index()
     {
-        return Cache::remember('usergroups-list', 60 * 24, function() {
+        return Cache::remember('usergroups-list', 60 * 24, function () {
             return $this->client->request('GET', 'https://php.ug/api/rest/listtype/1')->getBody()->__toString();
         });
     }
@@ -40,7 +39,6 @@ class UsergroupController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -52,7 +50,6 @@ class UsergroupController extends Controller
      */
     public function store(Request $request)
     {
-
     }
 
     /**
@@ -66,7 +63,6 @@ class UsergroupController extends Controller
     {
         $result = $this->client->request('GET', 'https://php.ug/api/rest/usergroup/'.$id);
 
-
         return $result;
     }
 
@@ -79,7 +75,6 @@ class UsergroupController extends Controller
      */
     public function edit($id)
     {
-
     }
 
     /**
@@ -92,7 +87,6 @@ class UsergroupController extends Controller
      */
     public function update(Request $request, $id)
     {
-
     }
 
     /**
@@ -104,6 +98,5 @@ class UsergroupController extends Controller
      */
     public function destroy($id)
     {
-
     }
 }

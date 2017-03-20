@@ -21,11 +21,11 @@ Route::get('/auth/github/callback', 'Auth\SocialController@handleProviderCallbac
 
 Route::get('/roadmap', 'Site\RoadmapController@index');
 
-Route::get('/test', function() {
+Route::get('/test', function () {
     $user = auth()->user();
 
     $amount = -200;
-    $message = "The reason for this transaction";
+    $message = 'The reason for this transaction';
 
     $data = [
         'ref_id' => 'someReferId',

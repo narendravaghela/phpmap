@@ -3,7 +3,6 @@
 namespace App\Traits;
 
 use App\Models\Users\Phpoint;
-use Illuminate\Database\Eloquent\Model;
 
 trait Pointable
 {
@@ -12,7 +11,7 @@ trait Pointable
      */
     public function transactions($amount = null)
     {
-        return $this->morphMany(Phpoint::class, 'pointable')->orderBy('created_at','desc')->take($amount);
+        return $this->morphMany(Phpoint::class, 'pointable')->orderBy('created_at', 'desc')->take($amount);
     }
 
     // /**
@@ -67,17 +66,16 @@ trait Pointable
     // }
 
     /**
-     *
      * @return mix
      */
-    public function countTransactions(){
+    public function countTransactions()
+    {
         return $this->transactions()
             ->count();
     }
 
     /**
-     *
-     * @return double
+     * @return float
      */
     public function currentPoints()
     {

@@ -2,10 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Closure;
+use Illuminate\Http\Request;
 
 class CheckReferral
 {
@@ -16,9 +14,9 @@ class CheckReferral
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next )
+    public function handle(Request $request, Closure $next)
     {
-        if ( !$request->hasCookie('referral') and $request->query('ref') ) {
+        if (! $request->hasCookie('referral') and $request->query('ref')) {
             return redirect($request->fullUrl())->withCookie(cookie()->forever('referral', $request->query('ref')));
         }
 

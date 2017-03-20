@@ -79,7 +79,7 @@ class RegisterController extends Controller
 //            'city' => $data['city'],
 //            'country' => $data['country'],
             'affiliate_id' => str_random(10),
-            'referred_by'   => $referred_by
+            'referred_by'   => $referred_by,
         ]);
     }
 }

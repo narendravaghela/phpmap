@@ -43,7 +43,7 @@ class ListAllUsers extends Command
         $headers = ['Name', 'Email', 'Created'];
 
         if ($users) {
-            $this->info('There are ' . $users_count . ' users on PHPMap.');
+            $this->info('There are '.$users_count.' users on PHPMap.');
             $this->table($headers, $users);
         } else {
             $this->info('Seems that there are no users..');
