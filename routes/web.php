@@ -19,7 +19,6 @@ Auth::routes();
 Route::get('/auth/github', 'Auth\SocialController@redirectToProvider');
 Route::get('/auth/github/callback', 'Auth\SocialController@handleProviderCallback');
 
-Route::get('/home', 'HomeController@index');
 Route::get('/roadmap', 'Site\RoadmapController@index');
 
 Route::get('/test', function() {
@@ -36,9 +35,6 @@ Route::get('/test', function() {
 
     dd($transaction);
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 
