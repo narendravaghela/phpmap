@@ -7,14 +7,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    @if( Request::is( Config::get('chatter.routes.home')) )
-        <title>Forums - {{ config('app.name', 'PHPMap') }}</title>
-    @elseif( Request::is( Config::get('chatter.routes.home') . '/' . Config::get('chatter.routes.category') . '/*' ) && isset( $discussion ) )
-        <title>{{ $discussion->category->name }} - {{ config('app.name', 'PHPMap') }}</title>
-    @elseif( Request::is( Config::get('chatter.routes.home') . '/*' ) && isset($discussion->title))
-        <title>{{ $discussion->title }} - {{ config('app.name', 'PHPMap') }}</title>
-    @endif
     <title>@yield('page_title') - {{ config('app.name', 'PHPMap') }}</title>
 
     <!-- Styles -->
