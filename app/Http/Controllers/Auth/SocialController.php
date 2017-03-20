@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Exception;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -37,6 +36,7 @@ class SocialController extends Controller
 
         $authUser = $this->findOrCreateUser($user);
         Auth::login($authUser, true);
+
         return Redirect::to('/home');
     }
 

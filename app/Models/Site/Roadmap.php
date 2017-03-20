@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Roadmap extends Model
 {
     protected $fillable = [
-        'title', 'icon', 'body', 'action_url', 'action_title', 'position'
+        'title', 'icon', 'body', 'action_url', 'action_title', 'position',
     ];
 }

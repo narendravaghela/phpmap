@@ -31,12 +31,12 @@ class Phpoint extends Model
      */
     public function getCurrentPoints(Model $pointable)
     {
-        $currentPoint = Phpoint::where('pointable_id', $pointable->id)
+        $currentPoint = self::where('pointable_id', $pointable->id)
             ->where('pointable_type', $pointable->getMorphClass())
             ->orderBy('created_at', 'desc')
             ->pluck('current')->first();
 
-        if (!$currentPoint) {
+        if (! $currentPoint) {
             $currentPoint = 0.0;
         }
 

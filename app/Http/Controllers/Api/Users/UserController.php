@@ -16,6 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+
         return response()->json($users);
     }
 
@@ -49,6 +50,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+
         return response()->json($user);
     }
 
@@ -89,6 +91,7 @@ class UserController extends Controller
         $user = User::find($id);
 //        $user->unsearchable();
         $user->delete();
+
         return redirect('/');
     }
 }

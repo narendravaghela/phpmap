@@ -46,10 +46,10 @@ class CheckReferrals extends Command
         $users_count = User::where('referred_by', $user->affiliate_id)->count();
 
         if ($users) {
-            $this->info($username . ' has referred ' . $users_count . ' users.');
+            $this->info($username.' has referred '.$users_count.' users.');
             $this->table($headers, $users);
         } else {
-            $this->error($username . ' has not referred any users.');
+            $this->error($username.' has not referred any users.');
         }
     }
 }

@@ -3,8 +3,6 @@
 namespace App\Listeners\Forums;
 
 use DevDojo\Chatter\Events\ChatterAfterNewDiscussion;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class HandleAfterNewDiscussion
 {
