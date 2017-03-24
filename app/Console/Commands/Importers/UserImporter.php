@@ -38,11 +38,11 @@ class UserImporter extends Command
      */
     public function handle()
     {
-        $url = "https://phpmap.co/public/users";
+        $url = 'https://phpmap.co/public/users';
 
         $users = json_decode(file_get_contents($url));
 
-        $array = array($users);
+        $array = [$users];
 
         foreach ($users as $user) {
             $migrated = new User();
@@ -58,7 +58,7 @@ class UserImporter extends Command
                 'country' => $user->country,
                 'company' => $user->company,
                 'website' => $user->website,
-                'affiliate_id' => str_random(10)
+                'affiliate_id' => str_random(10),
             ]);
         }
     }

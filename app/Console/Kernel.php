@@ -2,9 +2,9 @@
 
 namespace App\Console;
 
-use App\Console\Commands\Importers\UserImporter;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\Users\ListAllUsers;
+use App\Console\Commands\Importers\UserImporter;
 use App\Console\Commands\Users\Address\CheckNoAddress;
 use App\Console\Commands\Users\Referrals\CheckReferrals;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -20,7 +20,7 @@ class Kernel extends ConsoleKernel
         CheckReferrals::class,
         CheckNoAddress::class,
         ListAllUsers::class,
-        UserImporter::class
+        UserImporter::class,
     ];
 
     /**
