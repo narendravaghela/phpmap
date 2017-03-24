@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>{{ config('backpack.base.project_name') }} Error 401</title>
+    <title>{{ config('app.name') }} Error 401</title>
 
-    <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
     <style>
       body {
