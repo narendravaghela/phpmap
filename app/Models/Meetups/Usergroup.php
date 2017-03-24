@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Usergroup extends Model
 {
     protected $fillable = [
-        'name', 'shortname', 'url', 'icalendar_url', 'latitude', 'longitude', 'state', 'country', 'slug'
+        'name', 'shortname', 'url', 'icalendar_url', 'latitude', 'longitude', 'state', 'country', 'slug',
     ];
 
     public function contacts()

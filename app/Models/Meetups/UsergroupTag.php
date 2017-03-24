@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class UsergroupTag extends Model
 {
     protected $fillable = [
-        'name', 'description', 'usergroup_id'
+        'name', 'description', 'usergroup_id',
     ];
 }
