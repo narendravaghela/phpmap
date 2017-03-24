@@ -44,9 +44,10 @@ class UserImporter extends Command
 
         $array = [$users];
 
+        $currentUsers = User::all();
+
         foreach ($users as $user) {
-            $migrated = new User();
-            $migrated->create([
+            $newUser = [
                 'name' => $user->name,
                 'username' => $user->username,
                 'email' => $user->email,
@@ -59,7 +60,12 @@ class UserImporter extends Command
                 'company' => $user->company,
                 'website' => $user->website,
                 'affiliate_id' => str_random(10),
-            ]);
+            ];
+
+            if (!$currentUsers->has($newUser)) {
+                $migrated = new User();
+                $migrated->create($newUser);
+            }
         }
     }
 }
