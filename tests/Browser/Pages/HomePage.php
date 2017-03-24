@@ -23,7 +23,14 @@ class HomePage extends Page
      */
     public function assert(Browser $browser)
     {
-        //
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                ->assertSee('PHPMap')
+                ->assertSee('Collaborate')
+                ->assertSee('Write articles')
+                ->assertSee('Connect')
+                ->assertSee('Learn');
+        });
     }
 
     /**

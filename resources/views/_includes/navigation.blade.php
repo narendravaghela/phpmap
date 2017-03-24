@@ -19,8 +19,21 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                &nbsp;<li><a href="/">Home</a></li>
-                <li><a href="/forums">Forums</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="https://discuss.phpmap.co">Forums</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/meetups">Meetups</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        &#8226;&#8226;&#8226;
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/resources">Resources</a></li>
+                        <li><a href="/showroom">Showroom</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
