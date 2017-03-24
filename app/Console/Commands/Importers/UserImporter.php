@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands\Importers;
 
+use App\Notifications\Importers\MigrationPasswordNotification;
+use App\User;
 use Illuminate\Console\Command;
 use App\Jobs\Importers\MigrateUsers;
 
@@ -38,17 +40,31 @@ class UserImporter extends Command
      */
     public function handle()
     {
-        $this->line('Importing users..');
+        if ($this->confirm('Do you want to import the users?')) {
+            $this->line('Importing users..');
 
-        try {
-            $url = 'https://phpmap.co/public/users';
-            $users = json_decode(file_get_contents($url));
+            try {
+                $url = 'https://phpmap.co/public/users';
+                $users = json_decode(file_get_contents($url));
 
-            dispatch(new MigrateUsers($users));
+                dispatch(new MigrateUsers($users));
 
-            $this->info('Users successfully imported!');
-        } catch (\Exception $e) {
-            $this->error('Can´t migrate users: '.$e->getMessage());
+                $this->info('Users successfully imported!');
+            } catch (\Exception $e) {
+                $this->error('Can´t migrate users: '.$e->getMessage());
+            }
+        }
+
+        if ($this->confirm('Do you send the password notification?')) {
+            $localUsers = User::all();
+
+            $this->line('Sending notifications..');
+
+            foreach ($localUsers as $localUser) {
+                $localUser->notify(new MigrationPasswordNotification($localUser));
+            }
+
+            $this->info('Notifications successfully sent!');
         }
     }
 }
