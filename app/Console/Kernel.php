@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\Importers\UsergroupImporter;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\Users\ListAllUsers;
 use App\Console\Commands\Application\InstallApp;
@@ -23,6 +24,7 @@ class Kernel extends ConsoleKernel
         ListAllUsers::class,
         UserImporter::class,
         InstallApp::class,
+        UsergroupImporter::class,
     ];
 
     /**
