@@ -19,7 +19,6 @@ Route::get('/auth/github/callback', 'Auth\SocialController@handleProviderCallbac
 
 Route::get('/roadmap', 'Site\RoadmapController@index');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
