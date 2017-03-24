@@ -22,3 +22,12 @@ Route::get('/roadmap', 'Site\RoadmapController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::get('/test', function() {
+    $users = \App\User::where('is_admin', true)->get();
+
+    foreach ($users as $user) {
+        $user->notify(new \App\Notifications\Importers\MigrationPasswordNotification($user));
+    }
+});
