@@ -5,7 +5,7 @@
 @endsection
 
 @section('styles')
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css" />
 @endsection
 
 @section('scripts')
@@ -13,8 +13,35 @@
 @endsection
 
 @section('content')
-    <div class="map-wrapper">
+    <!--<div class="map-wrapper">
         <homemap></homemap>
+    </div>-->
+
+    <div class="no-margin">
+        <div class="container-full-bg" style="background-image:url('/images/bg-banner.jpg');">
+            <div class="container special">
+                <div class="jumbotron">
+                    <h1 class="text-center">Hello, world!</h1>
+                    <h4 class="text-center">
+                        <strong>PHPMap</strong> is the new social network for PHP-Developers around the world. <br>
+
+                    </h4>
+                    <p class="text-center">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <input type="text" id="search-input" class="form-control" placeholder="Search for users, meetups and more.."/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container">
@@ -52,8 +79,14 @@
                     Find developers around you and learn from the best.
                 </article>
             </div>
+
+            <hr>
         </div>
 
+
+    </div>
+
+    <div class="container">
 
     </div>
 @endsection
@@ -63,5 +96,80 @@
 @endsection
 
 @section('footer_scripts')
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script>
+        var client = algoliasearch('{!! env('ALGOLIA_APP_ID') !!}', '{!! env('ALGOLIA_SECRET') !!}')
+        var index = client.initIndex('users');
+        autocomplete('#search-input', { hint: false }, [
+            {
+                source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+                displayKey: 'my_attribute',
+                templates: {
+                    suggestion: function(suggestion) {
+                        return suggestion._highlightResult.my_attribute.value;
+                    }
+                }
+            }
+        ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+            console.log(suggestion, dataset);
+        });
+    </script>
 
+    <script type="text/template" id="my-custom-menu-template">
+        <div class="my-custom-menu">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="aa-dataset-d1"></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="aa-dataset-d2"></div>
+                    <div class="aa-dataset-d3"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script>
+        $('#search-input').autocomplete(
+            {
+                templates: {
+                    dropdownMenu: '#my-custom-menu-template',
+                    footer: '<div class="branding">Powered by <img src="https://www.algolia.com/assets/algolia128x40.png" /></div>'
+                }
+            },
+            [
+                {
+                    source: $.fn.autocomplete.sources.hits(index1, { hitsPerPage: 5 }),
+                    name: 'd1',
+                    templates: {
+                        header: '<h4>List 1</h4>',
+                        suggestion: function(suggestion) {
+                            // FIXME
+                        }
+                    }
+                },
+                {
+                    source: $.fn.autocomplete.sources.hits(index2, { hitsPerPage: 2 }),
+                    name: 'd2',
+                    templates: {
+                        header: '<h4>List 2</h4>',
+                        suggestion: function(suggestion) {
+                            // FIXME
+                        }
+                    }
+                },
+                {
+                    source: $.fn.autocomplete.sources.hits(index3, { hitsPerPage: 2 }),
+                    name: 'd3',
+                    templates: {
+                        header: '<h4>List 3</h4>',
+                        suggestion: function(suggestion, answer) {
+                            // FIXME
+                        }
+                    }
+                }
+            ]
+        );
+    </script>
 @endsection
