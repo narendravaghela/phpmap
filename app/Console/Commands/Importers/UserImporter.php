@@ -38,7 +38,7 @@ class UserImporter extends Command
      */
     public function handle()
     {
-        $this->line('Migrating users..');
+        $this->line('Importing users..');
 
         try {
             $url = 'https://phpmap.co/public/users';
@@ -46,7 +46,7 @@ class UserImporter extends Command
 
             dispatch(new MigrateUsers($users));
 
-            $this->info('Users successfully migrated!');
+            $this->info('Users successfully imported!');
         } catch (\Exception $e) {
             $this->error('Can´t migrate users: ' . $e->getMessage());
         }

@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\Application\InstallApp;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\Users\ListAllUsers;
 use App\Console\Commands\Importers\UserImporter;
@@ -21,6 +22,7 @@ class Kernel extends ConsoleKernel
         CheckNoAddress::class,
         ListAllUsers::class,
         UserImporter::class,
+        InstallApp::class
     ];
 
     /**
