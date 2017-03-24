@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\Users\Address;
 
+use App\Notifications\Users\NoAddressReminder;
 use App\User;
 use Illuminate\Console\Command;
 
@@ -47,6 +48,18 @@ class CheckNoAddress extends Command
             $this->table($headers, $users);
         } else {
             $this->info('Seems that all users have a valid address in their records.');
+        }
+
+        if (! $users_count == null) {
+            if ($this->confirm('Do you want to send them a address reminder?')) {
+                $noAddress = User::where('address', null)->get();
+
+                $this->line('Sending address reminders..');
+                foreach ($noAddress as $user) {
+                    $user->notify(new NoAddressReminder($user));
+                }
+                $this->info('All address reminders are sent!');
+            }
         }
     }
 }

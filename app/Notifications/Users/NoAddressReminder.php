@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\Importers;
+namespace App\Notifications\Users;
 
 use App\User;
 use Illuminate\Bus\Queueable;
@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class MigrationPasswordNotification extends Notification implements ShouldQueue
+class NoAddressReminder extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -47,13 +47,11 @@ class MigrationPasswordNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Please update your password')
+                    ->subject('Please update your address')
                     ->greeting('Hey '.$this->user->username)
-                    ->line('We´ve relaunched our site recently and migrated all existing users.')
-                    ->line('In order to providing more security, it is strongly recommended to update your password.')
-                    ->line('Your recent password has been reset to "'.'pwd_92838_'.str_slug($this->user->email, '_').'_UPDATE'.'".')
-                    ->action('Update Password', url('/account/password'))
-                    ->line('Thank you for using PHPMap!');
+                    ->line('You are not shown on the map because you don´t have added an address to your profile. In order to appear o the map, please add your address.')
+                    ->action('Add address', url('/account/address'))
+                    ->line('Thank you for using PHPMap');
     }
 
     /**
