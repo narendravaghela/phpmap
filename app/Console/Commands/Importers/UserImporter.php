@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands\Importers;
 
-use App\Jobs\Importers\MigrateUsers;
 use Illuminate\Console\Command;
+use App\Jobs\Importers\MigrateUsers;
 
 class UserImporter extends Command
 {
@@ -48,7 +48,7 @@ class UserImporter extends Command
 
             $this->info('Users successfully migrated!');
         } catch (\Exception $e) {
-            $this->error('Can´t migrate users: ' . $e->getMessage());
+            $this->error('Can´t migrate users: '.$e->getMessage());
         }
     }
 }
