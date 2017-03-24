@@ -35,7 +35,7 @@ class MigrateUsers
                 'name' => $user->name,
                 'username' => $user->username,
                 'email' => $user->email,
-                'password' => bcrypt('pwd_'. str_slug($user->username, '_') . '_UPDATE'),
+                'password' => bcrypt('pwd_92838_'. str_slug($user->email, '_') . '_UPDATE'),
                 'lat' => $user->lat,
                 'lng' => $user->lng,
                 'address' => $user->address,
