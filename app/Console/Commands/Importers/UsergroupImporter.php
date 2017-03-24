@@ -2,11 +2,10 @@
 
 namespace App\Console\Commands\Importers;
 
-use App\Models\Meetups\Usergroup;
-use App\Models\Meetups\UsergroupContact;
-use App\Models\Meetups\UsergroupTag;
-use App\Models\Meetups\UsergroupType;
 use Illuminate\Console\Command;
+use App\Models\Meetups\Usergroup;
+use App\Models\Meetups\UsergroupTag;
+use App\Models\Meetups\UsergroupContact;
 
 class UsergroupImporter extends Command
 {
@@ -58,7 +57,7 @@ class UsergroupImporter extends Command
                 'longitude' => $usergroup->longitude,
                 'state' => $usergroup->state,
                 'country' => $usergroup->country,
-                'slug' => str_slug($usergroup->name, '_')
+                'slug' => str_slug($usergroup->name, '_'),
             ]);
 
             foreach ($usergroup->contacts as $contact) {
@@ -69,7 +68,7 @@ class UsergroupImporter extends Command
                     'url' => $contact->url,
                     'name' => $contact->name,
                     'type' => $contact->type,
-                    'icon' => $contact->cssClass
+                    'icon' => $contact->cssClass,
                 ]);
             }
 
@@ -79,7 +78,7 @@ class UsergroupImporter extends Command
                 $localTag->create([
                     'usergroup_id' => $usergroup->id,
                     'name' => $tag->name,
-                    'description' => $tag->description
+                    'description' => $tag->description,
                 ]);
             }
         }

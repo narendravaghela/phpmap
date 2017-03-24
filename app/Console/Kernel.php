@@ -2,11 +2,11 @@
 
 namespace App\Console;
 
-use App\Console\Commands\Importers\UsergroupImporter;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\Users\ListAllUsers;
 use App\Console\Commands\Application\InstallApp;
 use App\Console\Commands\Importers\UserImporter;
+use App\Console\Commands\Importers\UsergroupImporter;
 use App\Console\Commands\Users\Address\CheckNoAddress;
 use App\Console\Commands\Users\Referrals\CheckReferrals;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

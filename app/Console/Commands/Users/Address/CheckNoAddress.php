@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands\Users\Address;
 
-use App\Notifications\Users\NoAddressReminder;
 use App\User;
 use Illuminate\Console\Command;
+use App\Notifications\Users\NoAddressReminder;
 
 class CheckNoAddress extends Command
 {
