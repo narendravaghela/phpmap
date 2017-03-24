@@ -48,10 +48,10 @@ class MigrationPasswordNotification extends Notification implements ShouldQueue
     {
         return (new MailMessage)
                     ->subject('Please Update your password')
-                    ->greeting('Hey ' . $this->user->username)
+                    ->greeting('Hey '.$this->user->username)
                     ->line('We´ve relaunched our site recently and migrated all existing users.')
                     ->line('In order to providing more security, it is strongly recommended to update your password.')
-                    ->line('Your recent password has been reset to "'. 'pwd_'. str_slug($this->user->username, '_') . '_UPDATE' .'".')
+                    ->line('Your recent password has been reset to "'.'pwd_'.str_slug($this->user->username, '_').'_UPDATE'.'".')
                     ->action('Update Password', url('/account/password'))
                     ->line('Thank you for using PHPMap!')
                     ->salutation('Florian');
