@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands\Application;
 
-use App\Notifications\Application\AppInstalledNotification;
 use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
+use App\Notifications\Application\AppInstalledNotification;
 
 class InstallApp extends Command
 {
@@ -68,7 +68,7 @@ class InstallApp extends Command
 
             $headers = ['Name', 'Username', 'Email'];
 
-            $adminUser = array([$name, $username, $email]);
+            $adminUser = [[$name, $username, $email]];
 
             $this->table($headers, $adminUser);
 
@@ -81,12 +81,12 @@ class InstallApp extends Command
                     'email' => $email,
                     'password' => bcrypt($password),
                     'is_admin' => true,
-                    'affiliate_id' => str_random(10)
+                    'affiliate_id' => str_random(10),
                 ]);
 
                 $user->notify(new AppInstalledNotification($user));
 
-                $this->info('The user "' . $username .'" was successfully created.');
+                $this->info('The user "'.$username.'" was successfully created.');
             }
         }
     }
