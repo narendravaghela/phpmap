@@ -57,6 +57,10 @@ class SocialController extends Controller
             return $authUser;
         }
 
+        if ($authUser = User::where('email', $githubUser->email)->first()) {
+            return $authUser;
+        }
+
         return User::create([
             'name' => $githubUser->name,
             'username' => $githubUser->nickname,
