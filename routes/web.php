@@ -22,7 +22,7 @@ Route::get('/auth/github/callback', 'Auth\SocialController@handleProviderCallbac
 Route::get('/roadmap', 'Site\RoadmapController@index');
 
 Route::get('/test', function () {
-    $url = "https://phpmap.co/public/users";
+    $url = 'https://phpmap.co/public/users';
 
     $users = json_decode(file_get_contents($url));
 
