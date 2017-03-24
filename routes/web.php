@@ -23,8 +23,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-
-Route::get('/test', function() {
+Route::get('/test', function () {
     $users = \App\User::where('is_admin', true)->get();
 
     foreach ($users as $user) {
