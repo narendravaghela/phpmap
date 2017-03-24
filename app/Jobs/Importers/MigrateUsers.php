@@ -4,12 +4,12 @@ namespace App\Jobs\Importers;
 
 use App\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 
-class MigrateUsers  implements ShouldQueue
+class MigrateUsers implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 

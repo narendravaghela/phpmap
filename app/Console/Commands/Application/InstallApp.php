@@ -65,7 +65,7 @@ class InstallApp extends Command
             $username = $this->ask('What´s the admin username?');
             $email = $this->ask('What´s the admin email?');
             $password = $this->secret('What´s the admin password?');
-            
+
             $headers = ['Name', 'Username', 'Email'];
 
             $adminUser = [[$name, $username, $email]];
