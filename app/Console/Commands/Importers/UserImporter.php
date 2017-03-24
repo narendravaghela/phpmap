@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands\Importers;
 
-use App\Notifications\Importers\MigrationPasswordNotification;
 use App\User;
 use Illuminate\Console\Command;
 use App\Jobs\Importers\MigrateUsers;
+use App\Notifications\Importers\MigrationPasswordNotification;
 
 class UserImporter extends Command
 {
