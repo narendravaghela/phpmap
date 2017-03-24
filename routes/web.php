@@ -24,9 +24,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/test', function () {
-    $users = \App\User::where('is_admin', true)->get();
+    $url = 'https://php.ug/api/rest/listtype/1';
+    $usergroups = json_decode(file_get_contents($url));
 
-    foreach ($users as $user) {
-        $user->notify(new \App\Notifications\Importers\MigrationPasswordNotification($user));
+    foreach ($usergroups->groups as $usergroup) {
+        echo $usergroup->name;
     }
 });
