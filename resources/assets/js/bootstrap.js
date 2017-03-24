@@ -48,5 +48,3 @@ window.Echo = new Echo({
 });
 
 window.places = require('places.js');
-
-require('./extra/bulma');

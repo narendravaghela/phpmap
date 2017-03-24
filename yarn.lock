@@ -1049,9 +1049,9 @@ clean-css-cli@^4.0.8:
     clean-css "^4.0.10"
     commander "2.x"
 
-clean-css@4.0.x, clean-css@^4.0.7:
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.9.tgz#63ff450b3f939508cc0cd2989bb9daaedc98333e"
+clean-css@4.0.x, clean-css@^4.0.10:
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.10.tgz#6be448d6ba8c767654ebe11f158b97a887cb713f"
   dependencies:
     source-map "0.5.x"
 
@@ -1062,9 +1062,9 @@ clean-css@^3.1.9:
     commander "2.8.x"
     source-map "0.4.x"
 
-clean-css@^4.0.10:
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.10.tgz#6be448d6ba8c767654ebe11f158b97a887cb713f"
+clean-css@^4.0.7:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.9.tgz#63ff450b3f939508cc0cd2989bb9daaedc98333e"
   dependencies:
     source-map "0.5.x"
 
@@ -4678,6 +4678,10 @@ vue-template-compiler@^2.1.9:
 vue-template-es2015-compiler@^1.2.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.1.tgz#0c36cc57aa3a9ec13e846342cb14a72fcac8bd93"
+
+vue-timeago@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/vue-timeago/-/vue-timeago-3.3.0.tgz#bc71227c231eed1fdf3c2a109c47e2427febe384"
 
 vue@^2.1.10:
   version "2.2.4"

@@ -33,6 +33,12 @@
     @yield('scripts')
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_KEY') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
+    <script>
+        window.USER = {!! Auth::check() ? Auth::user() : 'null' !!};
+        window.PUSHER_OPTIONS = {
+            key: '{{ config('broadcasting.connections.pusher.key') }}',
+        };
+    </script>
     @yield('footer_scripts')
 </body>
 </html>

@@ -22,18 +22,11 @@ Route::get('/auth/github/callback', 'Auth\SocialController@handleProviderCallbac
 Route::get('/roadmap', 'Site\RoadmapController@index');
 
 Route::get('/test', function () {
-    $user = auth()->user();
+    $url = "https://phpmap.co/public/users";
 
-    $amount = -200;
-    $message = 'The reason for this transaction';
+    $users = json_decode(file_get_contents($url));
 
-    $data = [
-        'ref_id' => 'someReferId',
-    ];
-
-    $transaction = $user->addPoints($amount, $message, $data);
-
-    dd($transaction);
+    return $users;
 });
 
 Auth::routes();

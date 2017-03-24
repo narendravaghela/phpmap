@@ -22,6 +22,7 @@
     "marker-clusterer-plus": "^2.1.4",
     "places.js": "^1.4.10",
     "pusher-js": "^4.0.0",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "vue-timeago": "^3.3.0"
   }
 }
