@@ -5,13 +5,10 @@ namespace App\Jobs\Importers;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
-class MigrateUsers  implements ShouldQueue
+class MigrateUsers
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, Queueable;
 
     public $users;
 
@@ -32,26 +29,22 @@ class MigrateUsers  implements ShouldQueue
      */
     public function handle()
     {
-        $adminUser = User::where('is_admin', 1)->first();
-
         foreach ($this->users as $user) {
-            if (! $adminUser->username == $user->username) {
-                $migrated = new User();
-                $migrated->create([
-                    'name' => $user->name,
-                    'username' => $user->username,
-                    'email' => $user->email,
-                    'password' => bcrypt('pleaseUpdateMe'),
-                    'lat' => $user->lat,
-                    'lng' => $user->lng,
-                    'address' => $user->address,
-                    'city' => $user->city,
-                    'country' => $user->country,
-                    'company' => $user->company,
-                    'website' => $user->website,
-                    'affiliate_id' => str_random(10),
-                ]);
-            }
+            $migrated = new User();
+            $migrated->create([
+                'name' => $user->name,
+                'username' => $user->username,
+                'email' => $user->email,
+                'password' => bcrypt('pwd_'. str_slug($user->username, '_') . '_UPDATE'),
+                'lat' => $user->lat,
+                'lng' => $user->lng,
+                'address' => $user->address,
+                'city' => $user->city,
+                'country' => $user->country,
+                'company' => $user->company,
+                'website' => $user->website,
+                'affiliate_id' => str_random(10),
+            ]);
         }
     }
 }
