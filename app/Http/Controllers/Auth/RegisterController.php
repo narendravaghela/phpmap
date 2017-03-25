@@ -83,7 +83,7 @@ class RegisterController extends Controller
 //            'country' => $data['country'],
             'affiliate_id' => str_random(10),
             'referred_by'   => $referred_by,
-            'is_verified' => false
+            'is_verified' => false,
         ]);
     }
 }
