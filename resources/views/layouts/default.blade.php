@@ -27,6 +27,8 @@
         @include('_includes.navigation')
 
         @yield('content')
+
+        //@include('_includes.footer')
     </div>
 
     <!-- Scripts -->

@@ -177,7 +177,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
-
+        Spatie\Browsershot\BrowsershotServiceProvider::class,
         PragmaRX\Countries\ServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
 
