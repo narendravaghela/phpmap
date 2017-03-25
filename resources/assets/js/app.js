@@ -14,6 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('homemap', require('./components/HomeMap.vue'));
+Vue.component('userlist', require('./components/UserList.vue'));
 
 const app = new Vue({
     el: '#app'

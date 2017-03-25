@@ -79,15 +79,15 @@
                     Find developers around you and learn from the best.
                 </article>
             </div>
-
-            <hr>
         </div>
 
-
+        <hr>
     </div>
 
     <div class="container">
-
+        <h3>Latest Users</h3>
+        <br>
+        <userlist></userlist>
     </div>
 @endsection
 

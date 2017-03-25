@@ -34,18 +34,18 @@
                 this.createMap();
                 google.maps.event.addListener(this.map, 'dragend', () => {
                     this.storeMapProperties();
-            });
+                });
                 google.maps.event.addListener(this.map, 'zoom_changed', () => {
                     this.storeMapProperties();
-            });
+                });
             },
             createMap() {
                 axios.get('/api_public/users').then(response => {
                     this.users = response.data;
-                var all = this.users;
-                var positions = [];
-                var markers = [];
-                var infowindow = new google.maps.InfoWindow({
+                    var all = this.users;
+                    var positions = [];
+                    var markers = [];
+                    var infowindow = new google.maps.InfoWindow({
                     content: ""
                 });
 
@@ -59,11 +59,14 @@
                             lon: parseFloat(user.lng)
                         }
                     };
+
                     // Make sure that we don't have two users at the exact same position
                     var position;
                     var randomness = 0.01;
+
                     while(true && usr.geo.lat > 0 && usr.geo.lon > 0) {
                         position = usr.geo.lat + "-" + usr.geo.lng;
+
                         if(positions.indexOf(position) !== -1) {
                             usr.geo.lat += (Math.random() - 0.5) * randomness;
                             usr.geo.lon += (Math.random() - 0.5) * randomness;
@@ -71,10 +74,12 @@
                             break;
                         }
                     }
+
                     positions.push(position);
 
                     var html = '<div class="profile"><img class="img img-circle" src="' + usr.avatar + '" alt="">&nbsp;<a href="/@'+ usr.username +'">' + usr.username + '</a></div>';
                     var userLatLng = new google.maps.LatLng(usr.geo.lat, usr.geo.lon);
+
                     var marker = new google.maps.Marker({
                         position: userLatLng
                     });
@@ -98,6 +103,7 @@
                         }
                     });
                 });
+
                 var clustererOptions = {
                     imagePath: '/images/map/m'
                 };
@@ -111,12 +117,14 @@
                 if(this.usergroups.length > 0) {
                     this.addUserGroupsToMap();
                 }
-            });
+                });
             },
+
             loadMapProperties() {
                 var properties = JSON.parse(localStorage.getItem('HomeMap.properties'));
                 return properties ? properties : { lat: 51.165691, lng: 10.451526, zoom: 3 };
             },
+
             storeMapProperties() {
                 localStorage.setItem('HomeMap.properties', JSON.stringify({
                     lat: this.map.getCenter().lat(),
@@ -128,6 +136,7 @@
             addUserGroupsToMap() {
                 this.usergroups.forEach((usergroup) => {
                     let latLng = new google.maps.LatLng(usergroup.latitude, usergroup.longitude);
+
                 var image = {
                     url: '/images/elephpant.png',
                     anchor: new google.maps.Point(22, 0)
@@ -141,6 +150,7 @@
 
                 let infoBox = null;
                 var tags = "";
+
                 if(usergroup.tags) {
                     tags = '<div class="tags">';
                     usergroup.tags.forEach((tag) => {
@@ -148,7 +158,9 @@
                 });
                     tags += '</div>';
                 }
+
                 var html = '<div class="usergroup"><a href="' + usergroup.url + '" target="_blank" class="name">Usergroup ' + usergroup.name + '</a>' + tags + '</div>';
+
                 google.maps.event.addListener(marker, 'click', function (evt) {
                     if (infoBox === null) {
                         infoBox = new InfoBox({
@@ -167,7 +179,7 @@
 
                 this.markerClusterer.addMarker(marker);
 
-            });
+                });
             },
 
             loadUserGroups() {
