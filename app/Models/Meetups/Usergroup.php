@@ -2,8 +2,8 @@
 
 namespace App\Models\Meetups;
 
-use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
 
 class Usergroup extends Model
 {
