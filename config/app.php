@@ -179,6 +179,8 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
 
+        PragmaRX\Countries\ServiceProvider::class,
+
     ],
 
     /*
@@ -233,6 +235,7 @@ return [
          */
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
+        'Countries'=> PragmaRX\Countries\Facade::class,
     ],
 
 ];

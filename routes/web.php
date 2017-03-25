@@ -31,3 +31,5 @@ Route::get('/test', function () {
         echo $usergroup->name;
     }
 });
+
+Route::get('/@{username}', 'Users\UserProfileController@showProfile');

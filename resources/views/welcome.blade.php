@@ -97,79 +97,86 @@
 
 @section('footer_scripts')
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script>
-        var client = algoliasearch('{!! env('ALGOLIA_APP_ID') !!}', '{!! env('ALGOLIA_SECRET') !!}')
-        var index = client.initIndex('users');
-        autocomplete('#search-input', { hint: false }, [
-            {
-                source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
-                displayKey: 'my_attribute',
-                templates: {
-                    suggestion: function(suggestion) {
-                        return suggestion._highlightResult.my_attribute.value;
-                    }
-                }
-            }
-        ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-            console.log(suggestion, dataset);
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
 
-    <script type="text/template" id="my-custom-menu-template">
+    <script type="text/template" id="search_results_template">
         <div class="my-custom-menu">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="aa-dataset-d1"></div>
+                <div class="col-sm-12">
+                    <div class="aa-dataset-users" style="padding: 5px;"></div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="aa-dataset-d2"></div>
+                <div class="col-sm-12">
+                    <div class="aa-dataset-ug" style="padding: 5px;"></div>
                     <div class="aa-dataset-d3"></div>
                 </div>
             </div>
         </div>
     </script>
 
+
+    <script id="search_empty_template" type="text/template">
+        <div class="autocomplete-wrapper empty">
+            <div class="h2">We didn't find any result for "@{{{ query }}}". Sorry!</div>
+        </div>
+    </script>
+
+    <script id="search_footer_template" type="text/template">
+        <div class="footer" style="padding: 8px;">
+            <div class="pull-right">Powered by
+                <a target="_blank" href="https://www.algolia.com/?utm_source=phpmap&utm_medium=link&utm_campaign=phpmap_search">
+                    <img width="50" src="https://www.algolia.com/assets/algolia128x40.png">
+                </a>
+            </div>
+
+        </div>
+    </script>
+
     <script>
+        console.log('Search initialized.');
+        var client = algoliasearch('{!! env('ALGOLIA_APP_ID') !!}', '{!! env('ALGOLIA_SECRET') !!}');
+        var userindex = client.initIndex('users');
+        var ugindex = client.initIndex('devusergroups');
+
         $('#search-input').autocomplete(
             {
                 templates: {
-                    dropdownMenu: '#my-custom-menu-template',
-                    footer: '<div class="branding">Powered by <img src="https://www.algolia.com/assets/algolia128x40.png" /></div>'
+                    dropdownMenu: '#search_results_template',
+                    footer: '#search_footer_template',
+                    empty: '#search_empty_template'
                 }
             },
             [
                 {
-                    source: $.fn.autocomplete.sources.hits(index1, { hitsPerPage: 5 }),
-                    name: 'd1',
+                    source: $.fn.autocomplete.sources.hits(userindex, { hitsPerPage: 5 }),
+                    name: 'users',
                     templates: {
-                        header: '<h4>List 1</h4>',
+                        header: '<h4>Users</h4><hr>',
                         suggestion: function(suggestion) {
-                            // FIXME
+                            return suggestion._highlightResult.username.value;
                         }
                     }
                 },
                 {
-                    source: $.fn.autocomplete.sources.hits(index2, { hitsPerPage: 2 }),
-                    name: 'd2',
+                    source: $.fn.autocomplete.sources.hits(ugindex, { hitsPerPage: 5 }),
+                    name: 'ug',
                     templates: {
-                        header: '<h4>List 2</h4>',
+                        header: '<h4>Usergroups</h4><hr>',
                         suggestion: function(suggestion) {
-                            // FIXME
-                        }
-                    }
-                },
-                {
-                    source: $.fn.autocomplete.sources.hits(index3, { hitsPerPage: 2 }),
-                    name: 'd3',
-                    templates: {
-                        header: '<h4>List 3</h4>',
-                        suggestion: function(suggestion, answer) {
-                            // FIXME
+                            return suggestion._highlightResult.name.value;
                         }
                     }
                 }
-            ]
+            ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+                console.log(suggestion);
+                if (dataset === 'ug') {
+                    window.location = "/usergroups/" + suggestion.shortname;
+                }
+
+                if (dataset === 'users') {
+                    window.location = "/@" + suggestion.username;
+                }
+            }
         );
+
     </script>
 @endsection

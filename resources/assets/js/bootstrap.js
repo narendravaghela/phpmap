@@ -47,4 +47,6 @@ window.Echo = new Echo({
     key: '4dc9a34c3ba97f1d923c'
 });
 
+window.algoliasearch = require('algoliasearch');
 window.places = require('places.js');
+window.autocomplete = require('autocomplete.js');
