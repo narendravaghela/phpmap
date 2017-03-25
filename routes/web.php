@@ -14,8 +14,8 @@
 Route::get('/', 'Sites\SiteController@index');
 
 Auth::routes();
-Route::get('/auth/github', 'Auth\SocialController@redirectToProvider');
-Route::get('/auth/github/callback', 'Auth\SocialController@handleProviderCallback');
+Route::get('/auth/github', 'Auth\SocialController@redirectToGithub');
+Route::get('/auth/github/callback', 'Auth\SocialController@handleGithubCallback');
 
 Route::get('/roadmap', 'Site\RoadmapController@index');
 

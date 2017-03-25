@@ -16,7 +16,7 @@ class SocialController extends Controller
      *
      * @return Response
      */
-    public function redirectToProvider()
+    public function redirectToGithub()
     {
         return Socialite::driver('github')->redirect();
     }
@@ -26,7 +26,7 @@ class SocialController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleGithubCallback()
     {
         try {
             $user = Socialite::driver('github')->user();
@@ -34,7 +34,7 @@ class SocialController extends Controller
             return Redirect::to('auth/github');
         }
 
-        $authUser = $this->findOrCreateUser($user);
+        $authUser = $this->findOrCreateGithubUser($user);
         Auth::login($authUser, true);
 
         return Redirect::to('/home');
@@ -47,7 +47,7 @@ class SocialController extends Controller
      *
      * @return User
      */
-    private function findOrCreateUser($githubUser)
+    private function findOrCreateGithubUser($githubUser)
     {
         if ($authUser = User::where('github_id', $githubUser->id)->first()) {
             return $authUser;
@@ -66,9 +66,10 @@ class SocialController extends Controller
             'username' => $githubUser->nickname,
             'email' => $githubUser->email,
             'github_id' => $githubUser->id,
-            'github_url' => 'https://github.com/'.$githubUser->nickname,
+            'github_url' => 'https://github.com/' . $githubUser->nickname,
             'avatar' => $githubUser->avatar,
             'affiliate_id' => str_random(10),
         ]);
     }
+
 }
