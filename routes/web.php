@@ -24,12 +24,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/test', function () {
-    $url = 'https://php.ug/api/rest/listtype/1';
-    $usergroups = json_decode(file_get_contents($url));
-
-    foreach ($usergroups->groups as $usergroup) {
-        echo $usergroup->name;
-    }
+    $browsershot = new \Spatie\Browsershot\Browsershot();
+    $browsershot
+        ->setURL('https://phpmap.co')
+        ->setWidth(1024)
+        ->setHeight(768)
+        ->setTimeout(5000)
+        ->save(public_path('website.jpg'));
 });
 
 Route::get('/@{username}', 'Users\UserProfileController@showProfile');
