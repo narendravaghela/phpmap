@@ -17,20 +17,8 @@ class EventServiceProvider extends ServiceProvider
 //            'App\Listeners\EventListener',
 //        ],
 
-        'DevDojo\Chatter\Events\ChatterBeforeNewDiscussion' => [
-            'App\Listeners\Forums\HandleBeforeNewDiscussion',
-        ],
-
-        'DevDojo\Chatter\Events\ChatterAfterNewDiscussion' => [
-            'App\Listeners\Forums\HandleAfterNewDiscussion',
-        ],
-
-        'DevDojo\Chatter\Events\ChatterBeforeNewResponse' => [
-            'App\Listeners\Forums\HandleBeforeNewResponse',
-        ],
-
-        'DevDojo\Chatter\Events\ChatterAfterNewResponse' => [
-            'App\Listeners\Forums\HandleAfterNewResponse',
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            'SocialiteProviders\Twitter\TwitterExtendSocialite@handle',
         ],
     ];
 

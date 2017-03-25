@@ -180,6 +180,7 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
 
         PragmaRX\Countries\ServiceProvider::class,
+        \SocialiteProviders\Manager\ServiceProvider::class,
 
     ],
 
