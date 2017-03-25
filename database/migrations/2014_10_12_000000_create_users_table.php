@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
 
             $table->boolean('is_admin')->default('0');
+            $table->boolean('is_verified')->default('0');
 
             $table->string('github_id')->unique()->nullable();
             $table->string('lat')->nullable();

@@ -44,6 +44,7 @@ class MigrateUsers
                 'company' => $user->company,
                 'website' => $user->website,
                 'affiliate_id' => str_random(10),
+                'is_verified' => false
             ]);
         }
     }

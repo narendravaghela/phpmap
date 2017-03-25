@@ -69,6 +69,7 @@ class SocialController extends Controller
             'github_url' => 'https://github.com/'.$githubUser->nickname,
             'avatar' => $githubUser->avatar,
             'affiliate_id' => str_random(10),
+            'is_verified' => false
         ]);
     }
 }

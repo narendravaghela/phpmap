@@ -18,7 +18,7 @@ class User extends Authenticatable implements Pointable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'avatar', 'profile_cover', 'email', 'github_id', 'slack_webhook_url', 'password', 'is_admin', 'lat', 'lng', 'address', 'city', 'country', 'company', 'intro', 'website', 'github_url', 'twitter_url', 'facebook_url', 'linkedin_url', 'email_token', 'affiliate_id', 'referred_by',
+        'name', 'username', 'avatar', 'profile_cover', 'email', 'github_id', 'slack_webhook_url', 'password', 'is_admin', 'lat', 'lng', 'address', 'city', 'country', 'company', 'intro', 'website', 'github_url', 'twitter_url', 'facebook_url', 'linkedin_url', 'email_token', 'affiliate_id', 'referred_by', 'is_verified'
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -26,11 +26,12 @@ class User extends Authenticatable implements Pointable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'slack_webhook_url', 'github_id',
+        'password', 'remember_token', 'slack_webhook_url', 'github_id', 'affiliate_id', 'referred_by'
     ];
 
     protected $casts = [
         'is_admin' => 'boolean',
+        'is_verified' => 'boolean'
     ];
 
     public function routeNotificationForMail()
