@@ -66,10 +66,9 @@ class SocialController extends Controller
             'username' => $githubUser->nickname,
             'email' => $githubUser->email,
             'github_id' => $githubUser->id,
-            'github_url' => 'https://github.com/' . $githubUser->nickname,
+            'github_url' => 'https://github.com/'.$githubUser->nickname,
             'avatar' => $githubUser->avatar,
             'affiliate_id' => str_random(10),
         ]);
     }
-
 }
