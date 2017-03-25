@@ -27,9 +27,7 @@ Route::get('/test', function () {
     $browsershot = new \Spatie\Browsershot\Browsershot();
     $browsershot
         ->setURL('https://phpmap.co')
-        ->setWidth(1024)
-        ->setHeight(768)
-        ->setTimeout(5000)
+        ->setHeightToRenderWholePage()
         ->save(public_path('website.jpg'));
 });
 
