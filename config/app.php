@@ -181,7 +181,6 @@ return [
         PragmaRX\Countries\ServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
         Lab404\Impersonate\ImpersonateServiceProvider::class,
-        BrianFaust\Rewardable\RewardableServiceProvider::class,
 
     ],
 
