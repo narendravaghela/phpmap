@@ -14,6 +14,12 @@
 
 @section('content')
     <div class="container-fluid">
+        @canImpersonate
+        <a href="{{ route('impersonate', $user->id) }}">Impersonate this user</a>
+        @endCanImpersonate
+        @impersonating
+        <a href="{{ route('impersonate.leave') }}">Leave impersonation</a>
+        @endImpersonating
         <div class="jumbotron">
             <h1>Hello, world!</h1>
             <p>...</p>

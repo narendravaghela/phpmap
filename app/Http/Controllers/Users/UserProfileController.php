@@ -11,6 +11,6 @@ class UserProfileController extends Controller
     {
         $user = User::where('username', $username)->first();
 
-        return $user;
+        return view('users.profile', compact('user'));
     }
 }

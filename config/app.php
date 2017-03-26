@@ -180,6 +180,7 @@ return [
         Spatie\Browsershot\BrowsershotServiceProvider::class,
         PragmaRX\Countries\ServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
+        Lab404\Impersonate\ImpersonateServiceProvider::class,
 
     ],
 

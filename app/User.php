@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Contracts\Pointable;
+use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use App\Traits\Pointable as PointableTrait;
@@ -10,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements Pointable
 {
-    use Notifiable, PointableTrait, HasApiTokens;
+    use Notifiable, PointableTrait, HasApiTokens, Impersonate;
 
     /**
      * The attributes that are mass assignable.
@@ -49,5 +50,13 @@ class User extends Authenticatable implements Pointable
         $referrals = self::where('referred_by', $this->affiliate_id)->get();
 
         return $referrals;
+    }
+
+    /**
+     * @return bool
+     */
+    public function canImpersonate()
+    {
+        return $this->is_admin;
     }
 }

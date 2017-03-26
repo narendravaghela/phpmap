@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c9d163392ca2b70649df8c84a31b55b",
+    "content-hash": "202da4d3b090b60867be5c9cd85e6439",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -727,6 +727,47 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "lab404/laravel-impersonate",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/404labfr/laravel-impersonate.git",
+                "reference": "aa292962e3a32d6567512819ae08ecbab5b33180"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/404labfr/laravel-impersonate/zipball/aa292962e3a32d6567512819ae08ecbab5b33180",
+                "reference": "aa292962e3a32d6567512819ae08ecbab5b33180",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.4.*"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.4.0",
+                "orchestra/testbench": "~3.4.0",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lab404\\Impersonate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "404lab",
+                    "email": "web@404lab.fr"
+                }
+            ],
+            "description": "Laravel Impersonate is a plugin that allows to you to authenticate as your users.",
+            "time": "2017-02-28T08:14:06+00:00"
         },
         {
             "name": "laravel/dusk",
