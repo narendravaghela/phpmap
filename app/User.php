@@ -57,7 +57,6 @@ class User extends Authenticatable implements Pointable
      */
     public function canImpersonate()
     {
-        return ;
     }
 
     /**
