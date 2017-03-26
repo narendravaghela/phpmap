@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Traits\Boardable;
+use App\Traits\HasInvites;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Lab404\Impersonate\Models\Impersonate;
@@ -9,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, Impersonate, FollowTrait;
+    use Notifiable, HasApiTokens, Impersonate, HasInvites, Boardable;
 
     /**
      * The attributes that are mass assignable.
