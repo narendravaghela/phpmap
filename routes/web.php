@@ -24,11 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/test', function () {
-    $browsershot = new \Spatie\Browsershot\Browsershot();
-    $browsershot
-        ->setURL('https://github.com/PHPMap/phpmap')
-        ->setHeightToRenderWholePage()
-        ->save(public_path('website.jpg'));
+    dd(auth()->user());
 });
 
 Route::get('/@{username}', 'Users\UserProfileController@showProfile');

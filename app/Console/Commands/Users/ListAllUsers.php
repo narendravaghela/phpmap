@@ -42,6 +42,12 @@ class ListAllUsers extends Command
         $users_count = User::count();
         $headers = ['Name', 'Email', 'Created'];
 
+        $all = User::all();
+
+        foreach ($all as $user) {
+            //$user->follow(1);
+        }
+
         if ($users) {
             $this->info('There are '.$users_count.' users on PHPMap.');
             $this->table($headers, $users);

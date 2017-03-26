@@ -2,16 +2,14 @@
 
 namespace App;
 
-use App\Contracts\Pointable;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Lab404\Impersonate\Models\Impersonate;
-use App\Traits\Pointable as PointableTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements Pointable
+class User extends Authenticatable
 {
-    use Notifiable, PointableTrait, HasApiTokens, Impersonate;
+    use Notifiable, HasApiTokens, Impersonate, FollowTrait;
 
     /**
      * The attributes that are mass assignable.
