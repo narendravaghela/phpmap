@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
+use App\Models\Users\Board;
+use App\Models\Users\Leaderboard;
 use App\Contracts\BoardRepository;
 use App\Exceptions\BlacklistedException;
 use App\Exceptions\InsufficientFundsException;
-use App\Models\Users\Board;
-use App\Models\Users\Leaderboard;
 
 class LeaderboardRepository implements BoardRepository
 {
