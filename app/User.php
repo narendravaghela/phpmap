@@ -57,7 +57,7 @@ class User extends Authenticatable implements Pointable
      */
     public function canImpersonate()
     {
-        return ;
+        return $this->is_admin;
     }
 
     /**
