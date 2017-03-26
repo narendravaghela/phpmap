@@ -3,9 +3,9 @@
 namespace App;
 
 use App\Contracts\Pointable;
-use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Lab404\Impersonate\Models\Impersonate;
 use App\Traits\Pointable as PointableTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
