@@ -48,8 +48,6 @@
                                     Actions <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#">Another action</a></li>
                                     <li><a href="#">Report User</a></li>
                                     @if($user->is_admin)
                                         @canImpersonate
