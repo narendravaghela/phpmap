@@ -36,18 +36,6 @@ class User extends Authenticatable
         'is_verified' => 'boolean',
     ];
 
-    /**
-     * Get the indexable data array for the model.
-     *
-     * @return array
-     */
-    public function toSearchableArray()
-    {
-        $array = $this->toArray();
-
-        return $array;
-    }
-
     public function routeNotificationForMail()
     {
         return $this->email;
