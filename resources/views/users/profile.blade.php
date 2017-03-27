@@ -38,7 +38,7 @@
                         @endif
                     </div>
 
-                    @if(Auth::check() && Auth::user()->is_admin)
+                    @if(Auth::check())
                         <div class="col-md-2 pull-right">
                             <br>
                             <div class="btn-group">
