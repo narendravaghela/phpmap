@@ -20,12 +20,12 @@ class LoginTest extends DuskTestCase
         $user = factory(User::class)->create([
             'username' => 'taylorotwell',
             'email' => 'taylor@laravel.com',
-            'password' => bcrypt('laravel123')
+            'password' => bcrypt('laravel123'),
         ]);
 
         $this->browse(function ($browser) {
             $browser->visit('/login')
-                ->type('email','taylor@laravel.com')
+                ->type('email', 'taylor@laravel.com')
                 ->type('password', 'laravel123')
                 ->press('Login')
                 ->assertPathIs('/@taylorotwell');
