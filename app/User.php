@@ -36,6 +36,16 @@ class User extends Authenticatable
         'is_verified' => 'boolean',
     ];
 
+    /**
+     * Get the index name for the model.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'users';
+    }
+
     public function routeNotificationForMail()
     {
         return $this->email;

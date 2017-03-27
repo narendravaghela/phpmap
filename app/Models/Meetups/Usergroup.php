@@ -13,6 +13,16 @@ class Usergroup extends Model
         'name', 'shortname', 'url', 'icalendar_url', 'latitude', 'longitude', 'state', 'country', 'slug',
     ];
 
+    /**
+     * Get the index name for the model.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'usergroups';
+    }
+
     public function contacts()
     {
         return $this->hasMany(UsergroupContact::class);
