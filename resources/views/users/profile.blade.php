@@ -28,15 +28,16 @@
                                 <small><strong>Administrator</strong> <i class="fa fa-user-circle" aria-hidden="true"></i></small>
                                 @if($user->is_verified)
                                     <small><strong>Verified</strong> <i class="fa fa-star verified" aria-hidden="true"></i></small>
-                                @else
-                                    <small><strong>Unverified</strong> <i class="fa fa-star-o" aria-hidden="true"></i></small>
                                 @endif
                             </p>
                         @else
-                            <p><small><strong>User</strong> <i class="fa fa-user-circle-o" aria-hidden="true"></i></small></p>
+                            <p>
+                                <small><strong>User</strong> <i class="fa fa-user-circle-o" aria-hidden="true"></i></small>
+                                @if($user->is_verified)
+                                    <small><strong>Verified</strong> <i class="fa fa-star verified" aria-hidden="true"></i></small>
+                                @endif
+                            </p>
                         @endif
-
-
                     </div>
 
                     @if(Auth::check() && Auth::user()->is_admin)
