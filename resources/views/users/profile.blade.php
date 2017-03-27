@@ -34,10 +34,11 @@
                             <a href="#" class="btn btn-xs btn-default">Test</a>
                             <a href="#" class="btn btn-xs btn-default">Test</a>
                             <a href="#" class="btn btn-xs btn-default">Test</a>
-                            @canImpersonate
-                                <a href="{{ route('impersonate', $user->id) }}" class="btn btn-xs btn-default">Impersonate this user</a>
-                            @endCanImpersonate
-
+                            @if(! $user->is_admin)
+                                @canImpersonate
+                                <a href="{{ route('impersonate', $user->id) }}" class="btn btn-xs btn-danger btn-block">Impersonate this user</a>
+                                @endCanImpersonate
+                            @endif
                         </div>
                     @endif
                 </div>
