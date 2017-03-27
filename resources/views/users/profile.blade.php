@@ -35,6 +35,7 @@
                             <a href="#" class="btn btn-xs btn-default">Test</a>
                             <a href="#" class="btn btn-xs btn-default">Test</a>
                             @if(! $user->is_admin)
+                                <hr>
                                 @canImpersonate
                                 <a href="{{ route('impersonate', $user->id) }}" class="btn btn-xs btn-danger btn-block">Impersonate this user</a>
                                 @endCanImpersonate
