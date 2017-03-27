@@ -131,7 +131,7 @@
         console.log('Search initialized.');
         var client = algoliasearch('{!! env('ALGOLIA_APP_ID') !!}', '{!! env('ALGOLIA_SECRET') !!}');
         var userindex = client.initIndex('users');
-        var ugindex = client.initIndex('devusergroups');
+        var ugindex = client.initIndex('usergroups');
 
         $('#search-input').autocomplete(
             {
