@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "202da4d3b090b60867be5c9cd85e6439",
+    "content-hash": "159a9a71d870dfb16444196e40333a2f",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -295,6 +295,63 @@
                 "webdriver"
             ],
             "time": "2017-03-22T10:56:03+00:00"
+        },
+        {
+            "name": "faustbrian/eloquent-presenter",
+            "version": "3.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/faustbrian/Laravel-Presenter.git",
+                "reference": "bcbc6ac4a8b10559cb32b20a2a3a541cb0fe5f97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/faustbrian/Laravel-Presenter/zipball/bcbc6ac4a8b10559cb32b20a2a3a541cb0fe5f97",
+                "reference": "bcbc6ac4a8b10559cb32b20a2a3a541cb0fe5f97",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.3.* || 5.4.*",
+                "nesbot/carbon": ">=1.21.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.2",
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BrianFaust\\Presenter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.de",
+                    "homepage": "https://brianfaust.de"
+                }
+            ],
+            "description": "Model Presenters for Laravel",
+            "keywords": [
+                "Brian Faust",
+                "Eloquent Presenter",
+                "eloquent-presenter",
+                "faustbrian",
+                "framework",
+                "laravel"
+            ],
+            "time": "2017-02-21T13:28:04+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -2420,16 +2477,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458"
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/0b7bdfb180e72c8d76e75a649ced67e392201458",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
                 "shasum": ""
             },
             "require": {
@@ -2441,9 +2498,9 @@
             },
             "require-dev": {
                 "apigen/apigen": "^4.1",
-                "codeception/aspect-mock": "1.0.0",
+                "codeception/aspect-mock": "^1.0 | ^2.0",
                 "doctrine/annotations": "~1.2.0",
-                "goaop/framework": "1.0.0-alpha.2",
+                "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
                 "mockery/mockery": "^0.9.4",
@@ -2498,7 +2555,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-03-18T15:38:09+00:00"
+            "time": "2017-03-26T20:37:53+00:00"
         },
         {
             "name": "socialiteproviders/manager",

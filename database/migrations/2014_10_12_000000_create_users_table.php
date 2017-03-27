@@ -42,6 +42,8 @@ class CreateUsersTable extends Migration
             $table->string('linkedin_url')->nullable();
             $table->longText('intro')->nullable();
 
+            $table->string('job_title')->nullable();
+
             $table->string('referred_by')->nullable();
             $table->string('affiliate_id')->unique();
 

@@ -2,13 +2,12 @@
     <div class="row">
         <div class="col-md-3" v-for="user in users">
             <div class="thumbnail">
-                <img v-bind:src="user.avatar" v-bind:alt="user.username" class="img img-circle">
+                <img v-bind:src="user.avatar" v-bind:alt="user.username" class="img img-circle img-responsive" style="max-height: 150px;">
                 <div class="caption">
-                    <h4>@{{ user.username }}</h4>
+                    <h4 class="text-center">@{{ user.username }}</h4>
 
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
-                        culpa itaque odio similique suscipit
-                    </p>
+                    <p v-if="user.company && user.company" class="text-center">{{ user.job_title }}, {{  user.company }}</p>
+                    <p v-if="! user.company" class="text-center">{{ user.job_title }}</p>
 
                     <a  v-bind:href="'@' + user.username" class="btn btn-default btn-xs btn-block" role="button">View Profile</a>
 
