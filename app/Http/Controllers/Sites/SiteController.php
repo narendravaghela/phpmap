@@ -15,4 +15,14 @@ class SiteController extends Controller
     {
         return view('map');
     }
+
+    public function getAbout()
+    {
+        return view('pages.about');
+    }
+
+    public function getImprint()
+    {
+        return view('pages.imprint');
+    }
 }

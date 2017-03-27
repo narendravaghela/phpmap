@@ -13,6 +13,9 @@
 
 Route::get('/', 'Sites\SiteController@index');
 Route::get('/map', 'Sites\SiteController@getMap');
+Route::get('/about', 'Sites\SiteController@getAbout');
+Route::get('/imprint', 'Sites\SiteController@getImprint');
+
 
 Auth::routes();
 Route::get('/auth/github', 'Auth\SocialController@redirectToGithub');
