@@ -14,6 +14,9 @@
 
 @section('content')
     <div class="container">
+
+        <h1>Login</h1>
+
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">

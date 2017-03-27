@@ -28,13 +28,26 @@
 
         @yield('content')
 
-        <!--@include('_includes.footer')-->
+        <div class="container">
+            <hr>
+        </div>
+
+        @include('_includes.footer')
     </div>
 
     <!-- Scripts -->
     @yield('scripts')
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_KEY') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
     @yield('footer_scripts')
+    @if(env('APP_ENV') == 'production')
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-83274930-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    @endif
 </body>
 </html>

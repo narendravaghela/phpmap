@@ -14,8 +14,10 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
 
+        <h1>Register</h1>
+
+        <div class="row">
             <div class="col-md-5">
                 <div class="panel panel-default">
                     <div class="panel-heading">

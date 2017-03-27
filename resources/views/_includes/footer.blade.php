@@ -1,4 +1,4 @@
-<footer id="footer" class="footer-bs">
+<footer class="footer-bs">
     <div class="row">
         <div class="col-md-3 footer-brand animated fadeInLeft">
             <h2>{{ config('app.name') }}</h2>
@@ -38,12 +38,15 @@
             <h4>Newsletter</h4>
             <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
             <p>
+            <form action="//phpmap.us9.list-manage.com/subscribe/post?u=818e71b0a69746cd0b61b923d&amp;id=6f7709c474" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
-                </span>
+                    <input type="text" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Your Email">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><span class="fa fa-envelope"></span></button>
+                    </span>
             </div>
+            </form>
+
             </p>
         </div>
     </div>
