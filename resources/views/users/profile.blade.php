@@ -24,9 +24,9 @@
                     <div class="col-md-3">
                         <h3>{{ $user->username }}</h3>
                         @if($user->is_verified)
-                            <p><small><strong>Verified</strong> <i class="fa fa-certificate verified" aria-hidden="true"></i></small></p>
+                            <p><small><strong>Verified</strong> <i class="fa fa-star verified" aria-hidden="true"></i></small></p>
                         @else
-                            <br>
+                            <p><small><strong>Unverified</strong> <i class="fa fa-star-o" aria-hidden="true"></i></small></p>
                         @endif
                     </div>
 
