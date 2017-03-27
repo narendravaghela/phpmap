@@ -13,10 +13,6 @@
 @endsection
 
 @section('content')
-    <!--<div class="map-wrapper">
-        <homemap></homemap>
-    </div>-->
-
     <div class="no-margin">
         <div class="container-full-bg" style="background-image:url('/images/bg-banner.jpg');">
             <div class="container special">

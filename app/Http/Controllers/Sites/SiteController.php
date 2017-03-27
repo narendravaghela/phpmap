@@ -10,4 +10,9 @@ class SiteController extends Controller
     {
         return view('welcome');
     }
+
+    public function getMap()
+    {
+        return view('map');
+    }
 }

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Sites\SiteController@index');
+Route::get('/map', 'Sites\SiteController@getMap');
 
 Auth::routes();
 Route::get('/auth/github', 'Auth\SocialController@redirectToGithub');

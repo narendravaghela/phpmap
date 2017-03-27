@@ -201,8 +201,8 @@
     #map {
         opacity: 0;
         width: 100%;
-        height: 600px;
-        position: relative;
+        height: 100%;
+        position: absolute;
         left: 0;
         top: 0;
         transition: opacity .2s;
@@ -219,6 +219,7 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none;
     }
+
     .infobox {
         position: absolute;
         user-select: none;
@@ -227,6 +228,7 @@
     .infobox .content .profile {
         text-align: center;
     }
+
     .infobox .profile .img {
         width: 100px;
         height: 100px;
@@ -235,6 +237,7 @@
         border: 3px solid #4CAF50;
         box-shadow: 0 1px 30px rgba(0, 0, 0, 0.3);
     }
+
     .infobox .profile a {
         display: inline-block;
         margin-top: 5px;
@@ -244,6 +247,7 @@
         font-size: 14px;
         box-shadow: 0 1px 30px rgba(0, 0, 0, 0.3);
     }
+
     .infobox .usergroup {
         padding: 6px 12px 10px 12px;
         background: white;
