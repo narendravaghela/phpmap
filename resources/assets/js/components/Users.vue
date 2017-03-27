@@ -69,7 +69,7 @@
                             '</div>',
                             item: itemTemplate
                         },
-                        hitsPerPage: 50
+                        hitsPerPage: 16
                     })
                 );
 
