@@ -7,7 +7,7 @@
                     <h4 class="text-center">@{{ user.username }}</h4>
 
                     <p v-if="user.job_title || user.company" class="text-center">{{ user.job_title }}, {{  user.company }}</p>
-                    <p v-else-if="user.job_title || user.company" class="text-center">{{ user.name }}</p>
+                    <p v-if="! user.job_title || ! user.company" class="text-center">{{ user.name }}</p>
                     <p v-if="! user.company" class="text-center">{{ user.job_title }}</p>
                     <p v-if="! user.job_title" class="text-center">{{ user.company }}</p>
 

@@ -49325,7 +49325,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "text-center"
     }, [_vm._v("@" + _vm._s(user.username))]), _vm._v(" "), (user.job_title || user.company) ? _c('p', {
       staticClass: "text-center"
-    }, [_vm._v(_vm._s(user.job_title) + ", " + _vm._s(user.company))]) : (user.job_title || user.company) ? _c('p', {
+    }, [_vm._v(_vm._s(user.job_title) + ", " + _vm._s(user.company))]) : _vm._e(), _vm._v(" "), (!user.job_title || !user.company) ? _c('p', {
       staticClass: "text-center"
     }, [_vm._v(_vm._s(user.name))]) : _vm._e(), _vm._v(" "), (!user.company) ? _c('p', {
       staticClass: "text-center"
