@@ -18,10 +18,10 @@ class RegisterTest extends DuskTestCase
     {
         $this->browse(function ($browser) {
             $browser->visit('/register')
-                ->type('name','Taylor Otwell')
-                ->type('username','taylorotwell')
-                ->type('address','Little Rock, Arkansas, Vereinigte Staaten von Amerika')
-                ->type('email','taylor@laravel.com')
+                ->type('name', 'Taylor Otwell')
+                ->type('username', 'taylorotwell')
+                ->type('address', 'Little Rock, Arkansas, Vereinigte Staaten von Amerika')
+                ->type('email', 'taylor@laravel.com')
                 ->type('password', 'laravel123')
                 ->type('password_confirmation', 'laravel123')
                 ->press('Register')
