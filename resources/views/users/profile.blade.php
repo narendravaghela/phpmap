@@ -49,7 +49,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Report User</a></li>
-                                    @if($user->is_admin)
+                                    @if(! $user->is_admin)
                                         @canImpersonate
                                         <li role="separator" class="divider"></li>
                                         <li><a href="{{ route('impersonate', $user->id) }}">Impersonate</a></li>
