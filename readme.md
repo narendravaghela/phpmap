@@ -1,4 +1,4 @@
-<p align="center"><img src="https://phpmap.co/images/logo_big.png" style="max-height: 70px;"></p>
+<p align="center"><img src="https://phpmap.co/images/logo_big.png" style="max-height: 50px;"></p>
 
 <p align="center">
 <a href="http://stackshare.io/fwartner/phpmap"><img src="http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat"></a>
