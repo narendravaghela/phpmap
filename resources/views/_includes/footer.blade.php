@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-md-3 footer-brand animated fadeInLeft">
             <h2>{{ config('app.name') }}</h2>
-            <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
+            <p>Organize meetups & usergroups, work on projects together with developers around you or simply have a look, who´s next to you.
+            </p>
             <p>© {{ date('Y') }} {{ config('app.name') }} - All rights reserved.</p>
         </div>
         <div class="col-md-4 footer-nav animated fadeInDown">

@@ -12,7 +12,7 @@
 ## About PHPMap
 
 PHPMap is an interactive map of PHP-Developers around the world.
-You will be able to organize meetups & usergroups. work on projects together with developers around you or simply have a look, who´s next to you.
+You will be able to organize meetups & usergroups, work on projects together with developers around you or simply have a look, who´s next to you.
 
 ##### Features
 
