@@ -5,7 +5,7 @@ namespace Tests\Browser\Pages;
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page as BasePage;
 
-class Userlist extends BasePage
+class Login extends BasePage
 {
     /**
      * Get the URL for the page.
@@ -14,7 +14,7 @@ class Userlist extends BasePage
      */
     public function url()
     {
-        return '/users';
+        return '/login';
     }
 
     /**

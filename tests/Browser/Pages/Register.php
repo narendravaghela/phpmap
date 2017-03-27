@@ -5,7 +5,7 @@ namespace Tests\Browser\Pages;
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page as BasePage;
 
-class Usergrouplist extends BasePage
+class Register extends BasePage
 {
     /**
      * Get the URL for the page.
@@ -14,7 +14,7 @@ class Usergrouplist extends BasePage
      */
     public function url()
     {
-        return '/usergroups';
+        return '/register';
     }
 
     /**
