@@ -50,3 +50,4 @@ window.Echo = new Echo({
 window.algoliasearch = require('algoliasearch');
 window.places = require('places.js');
 window.autocomplete = require('autocomplete.js');
+window.instantsearch = require('instantsearch.js');

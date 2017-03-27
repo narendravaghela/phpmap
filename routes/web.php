@@ -29,4 +29,6 @@ Route::get('/test', function () {
 });
 
 Route::get('/@{username}', 'Users\UserProfileController@showProfile');
+Route::get('/users', 'Site\UserController@getUsers');
+
 Route::impersonate();

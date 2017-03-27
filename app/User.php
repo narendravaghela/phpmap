@@ -8,10 +8,11 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Lab404\Impersonate\Models\Impersonate;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Scout\Searchable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, Impersonate, HasInvites, Boardable;
+    use Searchable, Notifiable, HasApiTokens, Impersonate, HasInvites, Boardable;
 
     /**
      * The attributes that are mass assignable.
@@ -34,6 +35,18 @@ class User extends Authenticatable
         'is_admin' => 'boolean',
         'is_verified' => 'boolean',
     ];
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        return $array;
+    }
 
     public function routeNotificationForMail()
     {

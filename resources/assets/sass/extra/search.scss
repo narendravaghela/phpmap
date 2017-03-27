@@ -30,3 +30,63 @@
   font-weight: bold;
   font-style: normal;
 }
+
+/* VARIABLES
+// ------------------------- */
+$aisdemo-primary-color: #FF585B;
+$aisdemo-text-color: #565A5C;
+$aisdemo-text-lighter-color: #949697;
+$aisdemo-color-white: #FFFFFF;
+$aisdemo-color-gray-light: #DCE0E0;
+$aisdemo-color-gray-lighter: #EDEFED;
+
+#hits {
+  .hit {
+    .pictures-wrapper {
+      position: relative;
+      .picture {
+        width: 100%;
+      }
+      .profile {
+        position: absolute;
+        bottom: -16px;
+        right: 12px;
+        width: 60px;
+        border: 4px solid rgba(255, 255, 255, .3);
+        border-radius: 30px;
+      }
+    }
+    .infos {
+      height: 90px;
+      padding: 16px 20px;
+
+      h4 {
+        font-size: 1em;
+        font-weight: normal;
+      }
+
+      p {
+        font-size: .8em;
+        color: $aisdemo-text-lighter-color;
+      }
+
+      em {
+        font-style: normal;
+        color: $aisdemo-primary-color;
+      }
+
+    }
+  }
+}
+
+
+/* PAGINATION
+// ------------------------- */
+#pagination {
+  text-align: center;
+
+  .ais-pagination--item {
+    display: inline-block;
+    margin: 1px;
+  }
+}
