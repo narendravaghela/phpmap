@@ -30,7 +30,7 @@ Thank you for considering contributing to PHPMap! Checkout the `CONTRIBUTING.md`
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within PHPMap, please send an e-mail to Florian Wartner at hi@florianwartner.co. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within PHPMap, please send an e-mail to Florian Wartner at f.wartner@phpmap.co. All security vulnerabilities will be promptly addressed.
 
 ## Donate
 
