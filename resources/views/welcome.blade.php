@@ -123,7 +123,6 @@
                     <img width="50" src="https://www.algolia.com/assets/algolia128x40.png">
                 </a>
             </div>
-
         </div>
     </script>
 

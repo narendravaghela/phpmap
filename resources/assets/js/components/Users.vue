@@ -3,9 +3,14 @@
         <div class="row">
             <div class="col-md-12">
                 <input class="form-control" type="text" id="search-box"/>
+                <small class="pull-right">Powered by
+                <a target="_blank" href="https://www.algolia.com/?utm_source=phpmap&utm_medium=link&utm_campaign=phpmap_search">
+                    <img width="50" src="https://www.algolia.com/assets/algolia128x40.png">
+                </a>
+                </small>
             </div>
 
-            <br><br>
+            <br><br><br>
             <div id="hits-container"></div>
 
             <div class="col-md-12">
