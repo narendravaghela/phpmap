@@ -5,15 +5,7 @@
                 <input class="form-control" type="text" id="search-box"/>
             </div>
 
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div id="country-container"></div>
-                    </div>
-                </div>
-            </div>
-
-            <br>
+            <br><br>
             <div id="hits-container"></div>
 
             <div class="col-md-12">
@@ -50,20 +42,15 @@
                     })
                 );
 
-                var itemTemplate = '<div class="col-md-4">'+
-                    '<div class="panel panel-default user-panel">'+
-                    '<a href="/@{{ username }}">'+
-                    '<div class="media">'+
-                    '<div class="media-left">'+
-                    '<img style="max-height: 68px;" class="media-object" src="{{ avatar }}" alt="{{ username }}">'+
-                    '</div>'+
-                    '<div class="media-body">'+
-                    '<h5 class="media-heading">{{ username }}</h4>'+
-                    '<i class="fa fa-map-marker" aria-hidden="true"></i> {{ country }}'+
-                    '</div>'+
-                    '</div>'+
-                    '</a>'+
-                    '</div>'+
+                var itemTemplate = '<div class="col-md-3">' +
+                    '<div class="thumbnail">' +
+                    '<img src="{{ avatar }}" alt="{{ username }}" class="img img-circle img-responsive" style="max-height: 150px;">' +
+                    '<div class="caption">' +
+                    '<h4 class="text-center">{{ username }}</h4>' +
+                    '<p class="text-center">{{ country }}</p>' +
+                    '<a  href="/@{{ username }}" class="btn btn-default btn-xs btn-block" role="button">View Profile</a>' +
+                    '</div>' +
+                    '</div>' +
                     '</div>';
 
                 search.addWidget(
@@ -78,18 +65,6 @@
                             item: itemTemplate
                         },
                         hitsPerPage: 50
-                    })
-                );
-
-                search.addWidget(
-                    instantsearch.widgets.refinementList({
-                        container: '#country-container',
-                        attributeName: 'country',
-                        operator: 'or',
-                        limit: 25,
-                        templates: {
-//                                header: 'Filter by Country'
-                        }
                     })
                 );
 
