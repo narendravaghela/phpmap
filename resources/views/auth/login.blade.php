@@ -97,7 +97,7 @@
                                     <a href="{{ url('/auth/github') }}" class="btn btn-social-icon btn-github">
                                         <span class="fa fa-github"></span>
                                     </a>
-                                    
+
                                     <a class="btn btn-link" href="{{ url('/password/reset') }}">
                                         Forgot Your Password?
                                     </a>

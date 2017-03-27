@@ -6,8 +6,7 @@
                 <div class="caption">
                     <h4 class="text-center">@{{ user.username }}</h4>
 
-                    <p v-if="user.company" class="text-center">{{ user.job_title }}</p>
-                    <p v-if="user.job_title" class="text-center">{{ user.company }}</p>
+                    <p v-if="user.country" class="text-center">{{ user.country }}</p>
 
                     <a  v-bind:href="'@' + user.username" class="btn btn-default btn-xs btn-block" role="button">View Profile</a>
 
