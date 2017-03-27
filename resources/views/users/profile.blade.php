@@ -27,14 +27,14 @@
                             <p>
                                 <small><strong>Administrator</strong> <i class="fa fa-user-circle" aria-hidden="true"></i></small>
                                 @if($user->is_verified)
-                                    <small><strong>Verified</strong> <i class="fa fa-star verified" aria-hidden="true"></i></small>
+                                    <small data-toggle="tooltip" data-placement="left" title="Verified profiles are profiles from official accounts where the ownerships are verified"><strong>Verified</strong> <i class="fa fa-star verified" aria-hidden="true"></i></small>
                                 @endif
                             </p>
                         @else
                             <p>
                                 <small><strong>User</strong> <i class="fa fa-user-circle-o" aria-hidden="true"></i></small>
                                 @if($user->is_verified)
-                                    <small><strong>Verified</strong> <i class="fa fa-star verified" aria-hidden="true"></i></small>
+                                    <small><strong data-toggle="tooltip" data-placement="left" title="Verified profiles are profiles from official accounts where the ownerships are verified">Verified</strong> <i class="fa fa-star verified" aria-hidden="true"></i></small>
                                 @endif
                             </p>
                         @endif
