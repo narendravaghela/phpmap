@@ -36,6 +36,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_KEY') }}"></script>
     @yield('scripts')
     <script src="{{ mix('js/app.js') }}"></script>
     @yield('footer_scripts')
