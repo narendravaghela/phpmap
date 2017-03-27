@@ -25,6 +25,8 @@
                         <h3>{{ $user->username }}</h3>
                         @if($user->is_verified)
                             <p><small><strong>Verified</strong> <i class="fa fa-certificate verified" aria-hidden="true"></i></small></p>
+                        @else
+                            <br>
                         @endif
                     </div>
 
