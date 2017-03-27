@@ -23,23 +23,31 @@
                 <div class="row">
                     <div class="col-md-3">
                         <h3>{{ $user->username }}</h3>
-                        <p>Girls just wanna go fun.</p>
+                        @if($user->is_verified)
+                            <p><small><strong>Verified</strong> <i class="fa fa-certificate verified" aria-hidden="true"></i></small></p>
+                        @endif
                     </div>
 
                     @if(Auth::check() && Auth::user()->is_admin)
-                        <div class="col-md-3 pull-right">
+                        <div class="col-md-2 pull-right">
                             <br>
-                            <a href="#" class="btn btn-xs btn-primary">Follow</a>
-                            <a href="#" class="btn btn-xs btn-default">Test</a>
-                            <a href="#" class="btn btn-xs btn-default">Test</a>
-                            <a href="#" class="btn btn-xs btn-default">Test</a>
-                            <a href="#" class="btn btn-xs btn-default">Test</a>
-                            @if(! $user->is_admin)
-                                <hr>
-                                @canImpersonate
-                                <a href="{{ route('impersonate', $user->id) }}" class="btn btn-xs btn-danger btn-block">Impersonate this user</a>
-                                @endCanImpersonate
-                            @endif
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Actions <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Report User</a></li>
+                                    @if($user->is_admin)
+                                        @canImpersonate
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="{{ route('impersonate', $user->id) }}">Impersonate</a></li>
+                                        @endCanImpersonate
+                                    @endif
+                                </ul>
+                            </div>
+                            <a href="/api/users/{{ $user->id }}/follow" class="btn btn-xs btn-primary">Follow User</a>
                         </div>
                     @endif
                 </div>
@@ -47,14 +55,13 @@
         </div>
 
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+            <li role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
+            <li role="presentation"><a href="#resources" aria-controls="resources" role="tab" data-toggle="tab">Resources</a></li>
         </ul>
 
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">
+            <div role="tabpanel" class="tab-pane active" id="activity">
 
             </div>
 
@@ -62,11 +69,7 @@
 
             </div>
 
-            <div role="tabpanel" class="tab-pane" id="messages">
-
-            </div>
-
-            <div role="tabpanel" class="tab-pane" id="settings">
+            <div role="tabpanel" class="tab-pane" id="resources">
 
             </div>
         </div>
