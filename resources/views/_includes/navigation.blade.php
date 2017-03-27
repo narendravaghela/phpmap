@@ -50,10 +50,15 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            @impersonating
+                                <li>
+                                    <a href="{{ route('impersonate.leave') }}">Back to my account</a>
+                                </li>
+                                <li class="divider"></li>
+                            @endImpersonating
+
                             <li><a href="/backend">Backend</a></li>
-
                             <li class="divider"></li>
-
                             <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

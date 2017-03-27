@@ -20,8 +20,27 @@
             @endif
             <img align="left" class="fb-image-profile thumbnail" src="{{ $user->avatar }}" alt="{{ $user->username }}"/>
             <div class="fb-profile-text">
-                <h3>{{ $user->username }}</h3>
-                <p>Girls just wanna go fun.</p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3>{{ $user->username }}</h3>
+                        <p>Girls just wanna go fun.</p>
+                    </div>
+
+                    @if(Auth::check() && Auth::user()->is_admin)
+                        <div class="col-md-3 pull-right">
+                            <br>
+                            <a href="#" class="btn btn-xs btn-primary">Follow</a>
+                            <a href="#" class="btn btn-xs btn-default">Test</a>
+                            <a href="#" class="btn btn-xs btn-default">Test</a>
+                            <a href="#" class="btn btn-xs btn-default">Test</a>
+                            <a href="#" class="btn btn-xs btn-default">Test</a>
+                            @canImpersonate
+                                <a href="{{ route('impersonate', $user->id) }}" class="btn btn-xs btn-default">Impersonate this user</a>
+                            @endCanImpersonate
+
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
 
