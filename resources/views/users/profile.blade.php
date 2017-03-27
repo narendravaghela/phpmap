@@ -15,9 +15,7 @@
 @section('content')
     <div class="container">
         <div class="fb-profile">
-            @if($user->profile_cover === '/images/profile_cover.jpg')
-                <div style="background: lightslategrey; height: 200px;"></div>
-            @endif
+            <div style="background: lightslategrey; height: 200px;"></div>
             <img align="left" class="fb-image-profile thumbnail" src="{{ $user->avatar }}" alt="{{ $user->username }}"/>
             <div class="fb-profile-text">
                 <div class="row">
