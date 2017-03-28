@@ -32,6 +32,9 @@
                 };
                 this.map = new google.maps.Map(document.querySelector('#map'), mapOptions);
                 this.createMap();
+                google.maps.event.addListener(this.map, 'idle', () => {
+                    $('footer').css('margin-top', ($('#map').height() - 160)+ 'px');
+                });
                 google.maps.event.addListener(this.map, 'dragend', () => {
                     this.storeMapProperties();
                 });
